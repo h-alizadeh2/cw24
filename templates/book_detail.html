@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <h3>show book id</h3>
@@ -13,7 +14,11 @@
     </h4>
     <hr>
     <h4>
-        Author:{{ book_detail.authors }}
+        {%for i in author %}
+        <h4>
+            Author:{{ i.first_name }}
+        </h4>
+        {%endfor%}
     </h4>
     <hr>
    <h4>

@@ -6,7 +6,7 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     authors = models.ManyToManyField('Author')
     published_day = models.DateField(auto_now_add=True)
-    ISBN = models.CharField(max_length=255)
+    ISBN = models.CharField(max_length=255,null=True, blank=True)
 
     def __str__(self):
         return f'{self.title} book is written by {self.authors}'
@@ -25,3 +25,11 @@ class Author(models.Model):
     
     def __str__(self):
         return f'{self.first_name}{self.last_name}'
+    
+
+class GeeksModel(models.Model):
+    title = models.CharField(max_length = 200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
